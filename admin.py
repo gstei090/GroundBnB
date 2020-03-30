@@ -71,7 +71,7 @@ def exit_program():
     exit()
 
 if __name__ == "__main__":
-    print("Welcome administrator, we've been expecting you.")
+    print("\nWelcome administrator, we've been expecting you.\n")
     
     while True:
         print('Please select one of the following options: \n\

@@ -1,9 +1,9 @@
-USER_TYPES = {'admin', 'employee', 'user'}
+USER_TYPES = {'admin', 'employee', 'guest', 'host'}
 
 def welcome():
     current_user_type = ''
     print('Welcome to GroundBnB, your one stop shop for corona free rentals!')
-    print('Please enter your user type: admin, employee, or user:')
+    print('Please enter your user type: admin, employee, guest, or host:')
     while current_user_type not in USER_TYPES:
         current_user_type = str(input())
         if current_user_type not in USER_TYPES:
@@ -15,8 +15,10 @@ def launch_app(user_type):
         execfile('admin.py')
     if user_type == 'employee':
         execfile('employee.py')
-    if user_type == 'user':
-        execfile('user.py')
+    if user_type == 'guest':
+        execfile('guest.py')
+    if user_type == 'host':
+        execfile('host.py')
 
 def execfile(filepath, globals=None, locals=None):
     if globals is None:
