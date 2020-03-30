@@ -1,3 +1,4 @@
+
 def get_all_the_corona_spreaders():
     '''
     Give the details of all the ​guests who rented properties. 
@@ -8,7 +9,7 @@ def get_all_the_corona_spreaders():
 
 def get_guest_list_view():
     '''
-    Createa view named ​GuestListView that gives the details of all the guests.
+    Create a view named ​GuestListView that gives the details of all the guests.
     Sort the guests by the ​branch id ​and then by ​guest id​.
     '''
     return None
@@ -22,7 +23,7 @@ def get_cheapest_rental():
 
 def get_all_rented_properties():
     '''
-    List all the properties rented and sort based on the ​branch​​id​ and ​review rating​.
+    List all the properties rented and sort based on the ​branch ​​id​ and ​review rating​.
     '''
     return None
 
@@ -66,9 +67,43 @@ def firstNameFirst():
     '''
     return None
 
+def exit_program():
+    exit()
 
 if __name__ == "__main__":
     print("Welcome administrator, we've been expecting you.")
+    
+    while True:
+        print('Please select one of the following options: \n\
+            1: Give the details of all the ​guests who rented properties.\n\
+            2: Create a view named ​GuestListView that gives the details of all the guests.\n\
+            3: Display the details of the cheapest (completed) rental.\n\
+            4: List all the properties rented and sort based on the ​branch​​ id​ and ​review rating​.\n\
+            5: Find the properties that are already listed but not yet rented.\n\
+            6: List all the details of all properties rented on the 10​th day of any month.\n\
+            7: List all the managers and the employees with salary greater than or equal to $​15000.\n\
+            8: Create a simple bill for a guest.\n\
+            9: Update the phone number of a guest.\n\
+            10: Create and test a user-defined function named ​FirstNameFirst.\n\
+            11: Exit Program')
+
+        switcher = {
+            1: get_all_the_corona_spreaders,
+            2: get_guest_list_view,
+            3: get_cheapest_rental,
+            4: get_all_rented_properties,
+            5: get_all_available_properties,
+            6: get_the_tenth_legion,
+            7: get_all_rich_people,
+            8: create_bill,
+            9: new_phone_who_dis,
+            10: firstNameFirst,
+            11: exit_program
+        }
+
+        chosen_option = int(input())
+        chosen_func = switcher.get(chosen_option)
+        chosen_func()
 
 
 
