@@ -100,8 +100,11 @@ if __name__ == "__main__":
             10: firstNameFirst,
             11: exit_program
         }
-
-        chosen_option = int(input())
+        chosen_option = -1
+        while chosen_option < 1 or chosen_option > 11:
+            print('Please enter numerical value for desired option:')
+            chosen_option = int(input())
+        
         chosen_func = switcher.get(chosen_option)
         chosen_func()
 
