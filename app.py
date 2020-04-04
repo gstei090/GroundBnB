@@ -4,7 +4,8 @@ def welcome():
     current_user_type = ''
     print('Welcome to GroundBnB, your one stop shop for corona free rentals!')
     print('Please enter your user type: admin, employee, guest, or host:')
-    while current_user_type not in USER_TYPES:
+    
+    while current_user_type not in USER_TYPES:        
         current_user_type = str(input())
         if current_user_type not in USER_TYPES:
             print('Please type in lowercase your user type:')
