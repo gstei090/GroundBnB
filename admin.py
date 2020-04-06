@@ -106,7 +106,7 @@ if __name__ == "__main__":
             try:
                 chosen_option = int(input())
             except:
-                chosen_option = -1
+                print('Invalid input format')
         chosen_func = switcher.get(chosen_option)
         chosen_func()
 
