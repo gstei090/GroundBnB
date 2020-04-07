@@ -1,3 +1,4 @@
+import database
 
 def list_all_branch_properties():
     return None
@@ -5,6 +6,12 @@ def list_all_branch_properties():
 def exit_program():
     exit()
 
+def EXAMPLE():
+    con = database.connect_to_database()
+    test_string = "SELECT * FROM laboratories.artist"
+    res = database.execute_query(con, test_string)
+    print(res)
+    database.close_connection(con)
 
 if __name__ == "__main__":
     employeeID = -1
@@ -25,6 +32,7 @@ if __name__ == "__main__":
         switcher = {
             1: list_all_branch_properties,
             2: exit_program,
+            3: EXAMPLE,
         }
         chosen_option = -1
         while chosen_option < 1 or chosen_option > 11:

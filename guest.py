@@ -1,3 +1,4 @@
+import database
 
 def list_available_properties():
     return None

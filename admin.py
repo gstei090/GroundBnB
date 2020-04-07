@@ -1,3 +1,4 @@
+import database
 
 def get_all_the_corona_spreaders():
     '''

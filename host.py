@@ -1,3 +1,4 @@
+import database
 
 def upload_new_property(hostID):
     return None
