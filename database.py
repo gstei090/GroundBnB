@@ -8,7 +8,8 @@ def connect_to_database():
         port = "15432",
         database="",
         user = "" ,
-        password = "")
+        password = "",
+        options= "-c search_path=groundbnb")
     return connection
 
 
@@ -16,15 +17,12 @@ def execute_query(query_string):
     connection = connect_to_database()
     cursor = connection.cursor()
     cursor.execute(query_string)
-    rows = cursor.fetchall()
+    rows = None
+    try:
+        rows = cursor.fetchall()
+    except:
+        print('Nothing to fetch')
+    connection.commit()
     cursor.close()
     connection.close()
     return rows
-
-
-# example
-# con = connect_to_database()
-# test_string = "SELECT * FROM laboratories.artist"
-# res = execute_query(con, test_string)
-# print(res)
-# close_connection(con)

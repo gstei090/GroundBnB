@@ -1,7 +1,11 @@
 import database
 
 def list_available_properties():
-    return None
+    query_string = "select property.* from property\
+        where availability = 'available'"
+    result = database.execute_query(query_string)
+    for row in result:
+        print(row)
 
 def exit_program():
     exit()
@@ -18,7 +22,7 @@ if __name__ == "__main__":
     print('Welcome to GroundBnB, guest {}!'.format(guestID))
     
     while True:
-        print('Please select one of the following options: \n\
+        print('\n\n\nPlease select one of the following options: \n\
             1: List available properties.\n\
             2: Exit program.')
 
