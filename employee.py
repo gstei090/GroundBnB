@@ -8,7 +8,7 @@ def exit_program():
 
 def EXAMPLE():
     con = database.connect_to_database()
-    test_string = "SELECT * FROM laboratories.artist"
+    test_string = "SELECT * FROM groundbnb.guest"
     res = database.execute_query(con, test_string)
     print(res)
     database.close_connection(con)
