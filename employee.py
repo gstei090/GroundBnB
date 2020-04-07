@@ -7,11 +7,9 @@ def exit_program():
     exit()
 
 def EXAMPLE():
-    con = database.connect_to_database()
     test_string = "SELECT * FROM groundbnb.guest"
-    res = database.execute_query(con, test_string)
+    res = database.execute_query(test_string)
     print(res)
-    database.close_connection(con)
 
 if __name__ == "__main__":
     employeeID = -1

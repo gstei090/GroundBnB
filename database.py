@@ -11,14 +11,14 @@ def connect_to_database():
         password = "")
     return connection
 
-def close_connection(connection):
-    connection.close()
 
-def execute_query(connection, query_string):
+def execute_query(query_string):
+    connection = connect_to_database()
     cursor = connection.cursor()
     cursor.execute(query_string)
     rows = cursor.fetchall()
     cursor.close()
+    connection.close()
     return rows
 
 
